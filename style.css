@@ -15,7 +15,7 @@
     margin: 0 auto;
 }
 .navbar{
-    background-color: antiquewhite;
+    /* box-shadow: 2px 2px 2px 2px black; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -56,6 +56,7 @@ a{
     
 }
 .hero-section{
+     /* box-shadow: 2px 2px 2px 2px black;  */
     position: relative;
     display: flex;
     justify-content: space-around;
@@ -128,7 +129,48 @@ a{
     width: fit-content;
     display: flex;
     justify-content: center;
-    box-shadow: 2px 2px 5px 0 black;
+    /* box-shadow: 2px 2px 5px 0 black; */
     border-radius: 20px;
+    background-color: rgb(150, 192, 227);
 }
 
+#about{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+.banner{
+    width: 600px;
+    height: 700px;
+    
+}
+.content-section{
+    padding: 20px;
+}
+.section-title{
+    text-align: center;
+    font-size: 80px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.content-text{
+    padding: 20px;
+    text-align: justify;
+    font-size:25px ;
+}
+.btn-groups{
+    padding: 10px;
+}
+.btn1{
+    background-color: rgb(27, 197, 200);
+    width: fit-content;
+    padding: 0.8rem 2rem;
+    font-size: 18px;
+    box-shadow: 5px 5px 7px 0 black;
+    transition: all 0.5s;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.btn1:hover{
+    background-color: rgb(229, 157, 62);
+}
