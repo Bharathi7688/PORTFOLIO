@@ -15,6 +15,7 @@
     margin: 0 auto;
 }
 .navbar{
+    
     /* box-shadow: 2px 2px 2px 2px black; */
     display: flex;
     justify-content: space-between;
@@ -161,7 +162,7 @@ a{
     padding: 10px;
 }
 .btn1{
-    background-color: rgb(27, 197, 200);
+    background-color: rgb(27, 248, 252);
     width: fit-content;
     padding: 0.8rem 2rem;
     font-size: 18px;
@@ -173,4 +174,51 @@ a{
 }
 .btn1:hover{
     background-color: rgb(229, 157, 62);
+}
+#skills{
+    
+    background-color: rgb(174, 217, 255);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.skills-content{
+    font-size: 20px;
+    padding: 50px;
+    width: 40%;
+}
+.skill-title{
+    font-size: 30px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 1000;
+}
+.skills-text{
+    text-align: justify;
+    font-weight: 500;
+    padding: 50px;
+    font-size: 15px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.skills-box{
+    
+    display: flex; 
+    align-items: center;
+    justify-content: right;
+    padding: 30px;  
+    
+}
+.skills-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    list-style: none;
+    gap: 2rem;
+    padding-top: 0 4rem;
+}
+.skill-logo{
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 0  black;
+    flex-wrap: wrap;
 }
