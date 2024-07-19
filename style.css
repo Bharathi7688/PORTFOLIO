@@ -6,7 +6,7 @@
 }
 body{
     /* background-color: rgb(255, 255, 255); */
-    background-color: rgb(255, 245, 236);
+    background-color: rgb(255, 255, 255);
 }
 
 .dark-mode {
@@ -68,6 +68,7 @@ body{
     color: rgb(0, 0, 0);
 }
 #mode-btn{
+    color: rgb(255, 0, 0);
     border: none;
     background: transparent;
     
