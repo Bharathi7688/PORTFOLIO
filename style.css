@@ -63,10 +63,17 @@ body{
     cursor: pointer;
 }
 .nav-items  a{
-    text-decoration: none;
+    /* outline: none; */
+    text-decoration: none ;
     color: rgb(0, 0, 0);
     position: relative;
 }
+
+.active, .nav-items a:hover {
+    font-weight: 700;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(2, 107, 30);
+  }
 #mode-btn{
     color: rgb(255, 0, 0);
     border: none;
