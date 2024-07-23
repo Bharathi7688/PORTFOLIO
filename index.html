@@ -11,21 +11,21 @@
 <body>
     <div class="wrapper">
         <div class="container">
-            <div class="navbar">
+            <header class="navbar">
                 <div class="logo-container">
                   <img class="logo" src="img/img-transformed.png" alt="">
                   <h2 class="logo-text">HARATHIDASAN</h2>
                 </div>
-                <div class="nav-items">
-                  <div><a href="#home">HOME</a></div>
-                  <div><a href="#about">ABOUT</a></div>
-                  <div><a href="#skills">SKILLS</a></div>
-                  <div><a href="#contact">CONTACT</a></div>
+                <nav class="nav-items">
+                      <a href="#home" class="active">HOME</a>
+                      <a href="#about">ABOUT</a>
+                      <a href="#skills">SKILLS</a>
+                      <a href="#contact">CONTACT</a>
                   <button onclick="myFunction()" class="bi bi-brightness-high-fill" id="mode-btn" ></button>
-                </div>
-            </div>
-        <div class="hero-section">
-           <div class="fadded-text">BHARATHIDASAN</div>
+                </nav>
+            </header>
+        <section class="hero-section" id="home">
+           <div class="fadded-text" data-text="BHARATHIDASAN">BHARATHIDASAN</div>
             <div class="hero-section-left">
                 <div class="hero-section-heading">Hi! BHARATHIDASAN</div>
                 <div class="hero-section-heading hero-section-sub-heading">I am a <span> MERN STACK DEVELOPER </span></div>
@@ -43,9 +43,9 @@
                 <!-- <button class="btn">HIRE ME</button> -->
             </div>
             <div class="hero-section-right">
-               <div class="img"> <img src="img/front-img3.png" alt="" width="360px" height="460px"></div>
+               <div class="img"><img src="img/front-img3.png" alt="" width="360px" height="460px"></div>
             </div>
-        </div>
+          </section>
         </div>
 
         <section class="about" id="about">
