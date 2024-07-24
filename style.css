@@ -363,7 +363,7 @@ body{
     color: #00bcd4;
 }
 .contact-container .contact-form{
-    /* box-shadow: 2px 2px 5px 0 black; */
+    box-shadow: 1px 1px 3px 0 black;
     position: relative;
     width: 40%;
     min-height: 100px;
