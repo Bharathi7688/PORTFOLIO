@@ -63,15 +63,14 @@ body{
     cursor: pointer;
 }
 .nav-items  a{
-    /* outline: none; */
+    font-weight: 700;
     text-decoration: none ;
     color: rgb(0, 0, 0);
     position: relative;
 }
 
 .active, .nav-items a:hover {
-    font-weight: 700;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: cursive ;
     color: rgb(2, 107, 30);
   }
 #mode-btn{
@@ -87,6 +86,7 @@ body{
     width: 4rem;
     height: 4rem;
     background: transparent;
+    text-decoration: none;
     border: .2rem solid blanchedalmond;
     border-radius: 50%;
     box-shadow: 0 .2rem .5rem black;
@@ -354,6 +354,3 @@ body{
     font-size: 1.6rem;
     color: white;
 }
-
-
-
