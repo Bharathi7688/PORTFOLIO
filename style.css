@@ -68,12 +68,12 @@ body{
     position: relative;
 }
 .nav-items a.active{
-    color: green;
+    text-decoration: underline  3px;
 }
 
 .active, .nav-items a:hover {
-    font-family: cursive ;
-    color: rgb(2, 107, 30);
+    color: #00bcd4;
+   
   }
 #mode-btn{
     color: rgb(255, 0, 0);
@@ -407,12 +407,12 @@ body{
     align-items: center;
     flex-wrap: wrap;
     padding: 1rem 7%;
-    background: black;
+    border: 1px solid black;
+    box-shadow: 1px 1px 3px  black;
 }
 
 .footer-text p {
     font-size: 1.6rem;
-    color: white;
 }
 
 
