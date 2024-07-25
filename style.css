@@ -9,7 +9,7 @@ body{
 }
 
 .dark-mode {
-    background-color: rgb(96, 96, 96);
+    background-color: rgb(15, 0, 77);
     color:  rgb(255, 255, 255);
   }
 #wrapper{
@@ -63,9 +63,12 @@ body{
 }
 .nav-items  a{
     font-weight: 700;
+    color: unset;
     text-decoration: none ;
-    color: rgb(0, 0, 0);
     position: relative;
+}
+.nav-items a.active{
+    color: green;
 }
 
 .active, .nav-items a:hover {
@@ -78,28 +81,6 @@ body{
     background: transparent;
     
 }
-.hero-section-left .social-media a {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    width: 4rem;
-    height: 4rem;
-    background: transparent;
-    text-decoration: none;
-    border: .2rem solid blanchedalmond;
-    border-radius: 50%;
-    box-shadow: 0 .2rem .5rem black;
-    font-size: 2rem;
-    color: rgb(7, 117, 13);
-    margin: 2.5rem 1.5rem 3rem 0;
-    transition: .5s ease;
-}
-
-.hero-section-left .social-media a:hover {
-    background: black;
-    color: white;
-}
-
 .hero-section{
      /* box-shadow: 2px 2px 2px 2px black;  */
     position: relative;
@@ -124,7 +105,6 @@ body{
 
 .hero-section-heading{
     font-size: 45px;
-    color: rgb(0, 0, 0);
     font-weight: 500;
 }
 
@@ -355,7 +335,7 @@ body{
     list-style: none;
 }
 .sci li a{
-    color: #252525;
+    color:unset;
     font-size: 2em;
     transition: 0.5s;
 }
@@ -388,6 +368,7 @@ body{
     border-bottom: 2px solid #333;
     outline: none;
     resize: none;
+    background-color: unset;
 }
 .contact-container .contact-form .input-box span{
     position:absolute;
