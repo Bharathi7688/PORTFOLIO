@@ -1,3 +1,4 @@
+
 function myFunction() {
     var element = document.body;
     element.classList.toggle("dark-mode");
@@ -14,4 +15,22 @@ for (var i = 0; i < nav.length; i++) {
   }
   this.className += " active";
   });
+}
+
+let btnTop=document.getElementById("btn-top");
+
+window.onscroll=function() {scrollFunction()};
+
+function scrollFunction(){
+  if (document.body.scroll>20 || document.documentElement.scrollTop>20)
+  {
+    btnTop.style.display="block";
+  }else {
+    btnTop.style.display="none";
+  }
+}
+
+function topFunction(){
+  document.body.scrollTop=0;
+  document.documentElement.scrollTop=0;
 }
