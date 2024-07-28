@@ -1,10 +1,10 @@
+let darkModwIcon=document.querySelector("#mode-btn");
 
-function myFunction() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
- }
+darkModwIcon.onclick=()=>{
+  darkModwIcon.classList.toggle("bi-sun-fill");
+  document.body.classList.toggle("dark-mode");
+}
 
- 
 var header = document.getElementById("nav-items");
 var nav = header.getElementsByClassName("act"); 
 for (var i = 0; i < nav.length; i++) {
