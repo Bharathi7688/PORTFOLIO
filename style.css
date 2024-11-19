@@ -519,6 +519,23 @@
   justify-content: flex-start;
 }
 
+.footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  justify-content: space-between;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-secondary);
+  background-color:var(--color-grey-1);
+}
+
+.footer-text p{
+  font-size: .9rem;
+}
 
 .stat-title {
   text-transform: uppercase;
