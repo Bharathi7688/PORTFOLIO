@@ -228,7 +228,6 @@
   text-align: left;
 }
 
-
 .right-header .name {
   font-size: 3.5rem;
   font-weight: 700;
@@ -244,7 +243,6 @@
   color: var(--color-secondary);
 }
 
-
 .right-header .role {
   font-size: 1.8rem;
   font-weight: 500;
@@ -259,7 +257,6 @@
   color: #f56666;
 }
 
-
 .right-header .description {
   font-size: 1.2rem;
   line-height: 1.6;
@@ -269,7 +266,6 @@
   font-family: 'Poppins', sans-serif;
   margin-bottom: 1.5rem;
 }
-
 
 .right-header .pro-details {
   margin-bottom: 2rem;
@@ -297,7 +293,6 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
 .right-header .btn-con {
   transform: translateZ(10px);
 }
@@ -308,99 +303,167 @@
   font-family: 'Poppins', sans-serif;
 }
 
-
+/* Animation Keyframes */
 @keyframes text3DName {
   0%, 100% {
-      transform: translateZ(25px) translateX(-5px) rotateY(-5deg);
+    transform: translateZ(25px) translateX(-5px) rotateY(-5deg);
   }
   50% {
-      transform: translateZ(35px) translateX(5px) rotateY(5deg);
+    transform: translateZ(35px) translateX(5px) rotateY(5deg);
   }
 }
 
 @keyframes text3DRole {
   0%, 100% {
-      transform: translateZ(20px) translateX(-4px) rotateY(-4deg);
+    transform: translateZ(20px) translateX(-4px) rotateY(-4deg);
   }
   50% {
-      transform: translateZ(30px) translateX(4px) rotateY(4deg);
+    transform: translateZ(30px) translateX(4px) rotateY(4deg);
   }
 }
 
 @keyframes text3DDesc {
   0%, 100% {
-      transform: translateZ(15px) translateX(-3px) rotateY(-3deg);
+    transform: translateZ(15px) translateX(-3px) rotateY(-3deg);
   }
   50% {
-      transform: translateZ(25px) translateX(3px) rotateY(3deg);
+    transform: translateZ(25px) translateX(3px) rotateY(3deg);
   }
 }
 
 @keyframes text3DDetail {
   0%, 100% {
-      transform: translateZ(10px) translateX(-2px) rotateY(-2deg);
+    transform: translateZ(10px) translateX(-2px) rotateY(-2deg);
   }
   50% {
-      transform: translateZ(20px) translateX(2px) rotateY(2deg);
+    transform: translateZ(20px) translateX(2px) rotateY(2deg);
   }
 }
 
 @keyframes text3DButton {
   0%, 100% {
-      transform: translateZ(10px) translateX(-2px) rotateY(-2deg);
+    transform: translateZ(10px) translateX(-2px) rotateY(-2deg);
   }
   50% {
-      transform: translateZ(20px) translateX(2px) rotateY(2deg);
+    transform: translateZ(20px) translateX(2px) rotateY(2deg);
   }
 }
 
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+  .header-content .right-header {
+    padding-right: 10rem;
+    padding-left: 1.5rem;
+  }
+  
+  .right-header .name {
+    font-size: 3rem;
+  }
+  
+  .right-header .role {
+    font-size: 1.6rem;
+  }
+}
 
 @media screen and (max-width: 970px) {
   .header-content .right-header {
-      padding-right: 0;
-      padding-left: 0;
-      width: 90%;
-      margin: 0 auto;
+    padding-right: 0;
+    padding-left: 0;
+    width: 90%;
+    margin: 0 auto;
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    text-align: center;
+  }
+
+  .right-header .text-3d-pro {
+    text-align: center;
   }
 
   .right-header .name {
-      font-size: 2.5rem;
+    font-size: 2.5rem;
+    letter-spacing: 1px;
   }
 
   .right-header .role {
-      font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   .right-header .description {
-      font-size: 1rem;
+    font-size: 1rem;
+    line-height: 1.5;
   }
 
   .right-header .detail-label,
   .right-header .detail-value {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
+  }
+
+  .right-header .detail-item {
+    justify-content: center;
   }
 }
 
 @media screen and (max-width: 600px) {
+  .header-content .right-header {
+    width: 95%;
+  }
+
   .right-header .name {
-      font-size: 2rem;
+    font-size: 2rem;
+    margin-bottom: 0.3rem;
   }
 
   .right-header .role {
-      font-size: 1.3rem;
+    font-size: 1.3rem;
+    margin: 0.5rem 0;
   }
 
   .right-header .description {
-      font-size: 0.9rem;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
   }
 
   .right-header .detail-label,
   .right-header .detail-value {
-      font-size: 0.8rem;
+    font-size: 0.8rem;
   }
 
   .right-header .btn-con {
-      margin-top: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .right-header .pro-details {
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .right-header .name {
+    font-size: 1.8rem;
+  }
+
+  .right-header .role {
+    font-size: 1.1rem;
+  }
+
+  .right-header .description {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  .right-header .detail-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .right-header .detail-label {
+    margin-right: 0;
+    margin-bottom: 0.2rem;
+  }
+
+  .right-header .detail-label,
+  .right-header .detail-value {
+    font-size: 0.75rem;
   }
 }
 
