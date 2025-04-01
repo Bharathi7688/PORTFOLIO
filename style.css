@@ -284,36 +284,68 @@
   font-size: 2rem;
   text-transform: uppercase;
 }
+
+
 .about-stats {
   padding-bottom: 4rem;
 }
+
 .about-stats .progress-bars {
   display: grid;
   grid-template-columns: repeat(2,1fr);
   grid-gap: 2rem;
 }
+
 .about-stats .progress-bars .progress-bar {
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease; /* Added for hover effect */
 }
+
+.about-stats .progress-bars .progress-bar:hover {
+  transform: translateY(-5px); /* Slight lift on hover */
+}
+
 .about-stats .progress-bars .progress-bar .prog-title {
   text-transform: uppercase;
   font-weight: 500;
+  transition: color 0.3s ease; /* Added for hover effect */
 }
+
+.about-stats .progress-bars .progress-bar:hover .prog-title {
+  color: var(--color-secondary); /* Changes title color on hover */
+}
+
 .about-stats .progress-bars .progress-bar .progress-con {
   display: flex;
   align-items: center;
+  position: relative;
 }
-.about-stats .progress-bars .progress-bar .progress-con .prog-text{
+
+.about-stats .progress-bars .progress-bar .progress-con .prog-text {
   color: var(--color-grey-2);
+  transition: color 0.3s ease; /* Added for hover effect */
 }
+
+.about-stats .progress-bars .progress-bar:hover .progress-con .prog-text {
+  color: var(--color-white); /* Brighter text on hover */
+}
+
 .about-stats .progress-bars .progress-bar .progress-con .progress {
   width: 100%;
   height: 0.45rem;
   background-color: var(--color-grey-4);
   margin-left: 1rem;
   position: relative;
+  overflow: hidden;
+  border-radius: 5px; /* Added for better appearance */
+  transition: box-shadow 0.3s ease; /* Added for hover effect */
 }
+
+.about-stats .progress-bars .progress-bar:hover .progress-con .progress {
+  box-shadow: 0 0 10px rgba(var(--color-secondary-rgb), 0.5); /* Glow effect on hover */
+}
+
 .about-stats .progress-bars .progress-bar .progress-con .progress span {
   position: absolute;
   top: 0;
@@ -321,28 +353,221 @@
   height: 100%;
   background-color: var(--color-secondary);
   transition: all 0.4s ease-in-out;
-  width: 60%;
+  transform-origin: left; /* Added for animation */
 }
-.about-stats .progress-bars .progress-bar .progress-con .progress .Html{
+
+/* Individual progress widths */
+.about-stats .progress-bars .progress-bar .progress-con .progress .Html {
   width: 80%;
 }
+
 .about-stats .progress-bars .progress-bar .progress-con .progress .CSS {
   width: 80%;
 }
-.about-stats .progress-bars .progress-bar .progress-con .progress .js{
+
+.about-stats .progress-bars .progress-bar .progress-con .progress .js {
   width: 50%;
 }
-.about-stats .progress-bars .progress-bar .progress-con .progress .react{
+
+.about-stats .progress-bars .progress-bar .progress-con .progress .react {
   width: 30%;
 }
-.about-stats .progress-bars .progress-bar .progress-con .progress .python{
+
+.about-stats .progress-bars .progress-bar .progress-con .progress .python {
   width: 40%;
 }
-.about-stats .progress-bars .progress-bar .progress-con .progress .java{
-  width: 20%;
+
+.about-stats .progress-bars .progress-bar .progress-con .progress .java {
+  width: 20%; /* Note: You had some inconsistencies in your HTML vs CSS */
 }
 
+/* Hover animation for progress bars */
+.about-stats .progress-bars .progress-bar:hover .progress-con .progress span {
+  animation: progressPulse 0.5s ease-in-out infinite alternate;
+}
 
+/* Pulse animation keyframes */
+@keyframes progressPulse {
+  0% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleX(1.02);
+    opacity: 0.8;
+  }
+}
+
+/* Light mode adjustments */
+.light-mode .about-stats .progress-bars .progress-bar:hover .prog-title {
+  color: var(--color-secondary);
+}
+
+.light-mode .about-stats .progress-bars .progress-bar:hover .progress-con .prog-text {
+  color: var(--color-black);
+}
+
+.about-tools {
+    padding: 4rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.tools-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.tool-card {
+    background: var(--color-grey-5);
+    padding: 2rem 1.5rem;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    transition: all 0.5s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--color-grey-4);
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.tool-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+    animation: slideIn 0.8s ease-out forwards;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.9);
+    }
+    60% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.tool-card:hover {
+    transform: scale(1.1);
+    background: var(--color-grey-4);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--color-secondary);
+}
+
+.tool-card i {
+    font-size: 3rem;
+    color: var(--color-secondary);
+    transition: all 0.5s ease;
+}
+
+.tool-card:hover i {
+    color: var(--color-white);
+    transform: scale(1.2);
+}
+
+.tool-card span {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: all 0.5s ease;
+}
+
+.tool-card:hover span {
+    color: var(--color-secondary);
+}
+
+/* Glow Effect */
+.tool-card::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(var(--color-secondary-rgb), 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: all 0.5s ease;
+    border-radius: 15px;
+}
+
+.tool-card:hover::before {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Tooltips */
+.tool-card::after {
+    content: attr(data-tool);
+    position: absolute;
+    top: -50px;
+    background: rgba(var(--color-secondary-rgb), 0.8);
+    color: var(--color-white);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+    pointer-events: none;
+    text-transform: capitalize;
+}
+
+.tool-card:hover::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Light mode */
+:root {
+    --color-secondary-rgb: 39, 151, 174; /* Dark mode */
+}
+
+.light-mode {
+    --color-secondary-rgb: 251, 84, 42; /* Light mode */
+}
+
+.light-mode .tool-card {
+    background: var(--color-grey-0);
+    border: 1px solid var(--color-grey-2);
+}
+
+.light-mode .tool-card:hover {
+    background: var(--color-grey-1);
+}
+
+.light-mode .tool-card i {
+    color: var(--color-secondary);
+}
+
+.light-mode .tool-card span {
+    color: var(--color-black);
+}
+
+/* Responsive */
+@media screen and (max-width: 600px) {
+    .tools-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .tool-card i {
+        font-size: 2.5rem;
+    }
+
+    .tool-card span {
+        font-size: 1rem;
+    }
+}
 
 .port-text{
   padding: 2rem 0;
@@ -553,6 +778,55 @@
   height: 1px;
   background-color: var(--color-grey-5);
   transform: translateX(-50%);
+}
+
+.submit-btn{
+    display: flex;
+    align-self: flex-start;
+}
+
+.m-btn {
+  border-radius: 30px;
+    color: inherit;
+    font-weight: 600;
+    position: relative;
+    border: 1px solid var(--color-secondary);
+    display: flex;
+    align-self: flex-start;
+    background-color: transparent;
+    align-items: center;
+    overflow: hidden;
+}
+
+.m-btn .btn-text {
+    padding: 0 2rem;
+}
+.m-btn .btn-icon {
+    background-color: var(--color-secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 1rem;
+}
+.m-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    transition: all 0.4s ease-in-out;
+    z-index: -1;
+}
+.m-btn:hover {
+    transition: all 0.4s ease-in-out;
+}
+.m-btn:hover::before {
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-secondary);
+    transform: translateX(0);
+    transition: all 0.4s ease-in-out;
 }
 
 .btn-con {
