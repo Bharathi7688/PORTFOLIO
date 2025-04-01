@@ -13,7 +13,7 @@
 })();
 
 var typed = new Typed("#text",{
-    strings: ["Web Developer!","Frond-end Developer!","Back-end Developer!"],
+    strings: ["Web Developer!","Software Developer!","Full Stack Developer!"],
     typeSpeed: 100,
     backSpeed: 100,
     backDelay: 1000,
