@@ -214,35 +214,6 @@
     }
 }
 
-/* Responsive Adjustments */
-@media screen and (max-width: 600px) {
-    .controls {
-        top: auto;
-        bottom: 0;
-        flex-direction: row;
-        justify-content: center;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 100%;
-        background-color: var(--color-grey-5); /* #252f40 */
-        padding: 0.5rem 0;
-    }
-    .control {
-        width: 45px;
-        height: 45px;
-        margin: 0.5rem 0.3rem;
-    }
-    .control i {
-        font-size: 1rem;
-    }
-    .control:hover {
-        transform: scale(1.05); /* Reduced scale for mobile */
-        rotate: 0deg; /* No tilt on small screens */
-    }
-    .control:hover i {
-        transform: scale(1.2) rotate(0deg); /* Adjusted for mobile */
-    }
-}
 
   .theme-btn {
     top: 5%;
