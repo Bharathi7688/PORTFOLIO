@@ -544,9 +544,11 @@
 }
 .about-container .left-about p {
   line-height: 2rem;
+  text-align: justify;
   padding: 1rem;
   color: var(--color-grey-1);
 }
+
 .about-container .left-about h4 {
   font-size: 2rem;
   text-transform: uppercase;
@@ -1099,111 +1101,196 @@
 }
 
 .right-contact {
-    flex: 3;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    padding: 2rem;
-    transition: all 0.4s ease-in-out;
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center-align content */
+  padding: 2rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.right-contact h4 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--color-secondary); /* #32cd32 dark, #4b5efa light */
+  letter-spacing: 2px;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transform: translateZ(10px); /* Slight 3D lift */
+  margin-bottom: 1rem;
+}
+
+.right-contact .intro-text {
+  margin: 0 0 2rem;
+  line-height: 1.8rem;
+  color: var(--color-grey-1); /* #d3dce6 */
+  font-size: 1.1rem;
+  max-width: 500px;
+  text-align: center;
 }
 
 .contact-form {
-    width: 100%;
-    max-width: 600px; 
+  width: 100%;
+  max-width: 600px; /* Constrain form width */
 }
 
-
+/* Input Control Styling */
 .input-control {
-    margin: 1.5rem 0;
-    position: relative;
-    perspective: 1000px; 
+  margin: 1.5rem 0;
+  position: relative;
+  perspective: 1000px; /* Enable 3D effects */
 }
 
 .input-control input,
-.input-control textarea {
-    border-radius: 30px;
-    font-weight: inherit;
-    font-size: 1rem;
-    font-family: "Poppins", sans-serif;
-    padding: 0.8rem 1.1rem;
-    outline: none;
-    border: 2px solid var(--color-grey-4); 
-    background-color: var(--color-grey-5); 
-    width: 100%;
-    color: var(--color-white);
-    resize: none;
-    transition: all 0.4s ease;
-    transform-style: preserve-3d;
+.input-control textarea,
+.input-control select {
+  border-radius: 30px;
+  font-weight: inherit;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  padding: 0.8rem 1.1rem;
+  outline: none;
+  border: 2px solid var(--color-grey-4); /* #344767 */
+  background-color: var(--color-grey-5); /* #252f40 */
+  width: 100%;
+  color: var(--color-white); /* #ffffff dark, #344767 light */
+  resize: none;
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
 }
 
-
+/* Hover and Focus Effects */
 .input-control input:hover,
 .input-control textarea:hover,
+.input-control select:hover,
 .input-control input:focus,
-.input-control textarea:focus {
-    border-color: var(--color-secondary); 
-    transform: translateZ(10px) scale(1.02); 
-    box-shadow: 0 5px 15px rgba(var(--color-secondary-rgb), 0.3);
-    background-color: var(--color-grey-6); 
+.input-control textarea:focus,
+.input-control select:focus {
+  border-color: var(--color-secondary); /* #32cd32 dark, #4b5efa light */
+  transform: translateZ(10px) scale(1.02); /* 3D lift */
+  box-shadow: 0 5px 15px rgba(var(--color-secondary-rgb), 0.3);
+  background-color: var(--color-grey-6); /* #141c2f */
 }
 
-
+/* Placeholder Styling */
 .input-control input::placeholder,
-.input-control textarea::placeholder {
-    color: var(--color-grey-2); 
-    opacity: 0.8;
-    transition: all 0.4s ease;
+.input-control textarea::placeholder,
+.input-control select:invalid {
+  color: var(--color-grey-2); /* #a3bffa */
+  opacity: 0.8;
+  transition: all 0.4s ease;
 }
 
 .input-control input:focus::placeholder,
 .input-control textarea:focus::placeholder {
-    opacity: 0; 
+  opacity: 0;
 }
 
-
+/* Dual Input Layout */
 .i-c-2 {
-    display: flex;
-    gap: 1.5rem;
+  display: flex;
+  gap: 1.5rem; /* Space between inputs */
 }
 
 .i-c-2 input {
-    flex: 1; 
+  flex: 1; /* Equal width */
+}
+
+/* Select Styling */
+.input-control select {
+  appearance: none; /* Remove default arrow */
+  background-image: url('data:image/svg+xml;utf8,<svg fill="%23a3bffa" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>'); /* Custom arrow */
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+}
+
+/* Checkbox Styling */
+.checkbox-control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.checkbox-control label {
+  color: var(--color-grey-1); /* #d3dce6 */
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.checkbox-control input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  accent-color: var(--color-secondary); /* #32cd32 dark, #4b5efa light */
+  transition: transform 0.4s ease;
+}
+
+.checkbox-control input[type="checkbox"]:hover,
+.checkbox-control input[type="checkbox"]:checked {
+  transform: scale(1.2);
 }
 
 
 
 
+
+/* 3D Hover Effect for Button */
 .m-btn:hover {
-    transform: translateZ(15px) rotateX(10deg); 
-    box-shadow: 0 10px 20px rgba(var(--color-secondary-rgb), 0.5);
+  transform: translateZ(15px) rotateX(10deg); /* 3D lift and tilt */
+  box-shadow: 0 10px 20px rgba(var(--color-secondary-rgb), 0.5);
 }
 
 .m-btn::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0;
-    height: 100%;
-    background-color: var(--color-secondary); 
-    transform: translateX(100%);
-    transition: all 0.4s ease-in-out;
-    z-index: -1;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  background-color: var(--color-secondary); /* #32cd32 dark, #4b5efa light */
+  transform: translateX(100%);
+  transition: all 0.4s ease-in-out;
+  z-index: -1;
 }
 
 .m-btn:hover::before {
-    width: 100%;
-    transform: translateX(0);
+  width: 100%;
+  transform: translateX(0);
 }
 
 .m-btn:hover .btn-icon {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .m-btn:hover .btn-icon i {
-    animation: sendPlane 0.6s infinite alternate; 
+  animation: sendPlane 0.6s infinite alternate;
 }
 
+/* Success Message */
+.success-message {
+  margin-top: 1rem;
+  color: var(--color-secondary); /* #32cd32 dark, #4b5efa light */
+  font-size: 1rem;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.success-message.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Plane Animation */
+@keyframes sendPlane {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(5px) rotate(10deg);
+  }
+}
 
 
 

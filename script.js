@@ -90,4 +90,45 @@
                 });
         });
     });
+
+    document.getElementById('contact-form').addEventListener('submit', async function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        const form = e.target;
+        const successMessage = document.querySelector('.success-message');
+        const errorMessage = document.querySelector('.error-message');
+
+        // Reset messages
+        successMessage.style.display = 'none';
+        successMessage.classList.remove('visible');
+        errorMessage.style.display = 'none';
+
+        try {
+            const response = await fetch(form.action, {
+                method: form.method,
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                // Show success message
+                successMessage.style.display = 'block';
+                setTimeout(() => successMessage.classList.add('visible'), 10);
+                form.reset(); // Clear form
+            } else {
+                throw new Error('Form submission failed');
+            }
+        } catch (error) {
+            // Show error message
+            errorMessage.style.display = 'block';
+            setTimeout(() => errorMessage.classList.add('visible'), 10);
+            console.error('Submission error:', error);
+        }
+    });
+
+
+    
 })();
+
