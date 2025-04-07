@@ -232,6 +232,12 @@
     overflow: hidden; /* Contain icons */
 }
 
+.theme-btn:hover {
+    background-color: var(--color-secondary);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.1) rotate(10deg); /* Slight scale and tilt */
+}
+
 .theme-btn:active {
     transform: translateY(-3px);
 }
@@ -543,11 +549,14 @@
   padding-right:5rem ;
 }
 .about-container .left-about p {
-  line-height: 2rem;
+  line-height: 1.5rem;
   text-align: justify;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
   padding: 1rem;
   color: var(--color-grey-1);
 }
+
+
 
 .about-container .left-about h4 {
   font-size: 2rem;
@@ -681,6 +690,34 @@
     position: relative;
     overflow: hidden;
 }
+
+.stat-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--color-secondary);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 800;
+  /* 3D layered shadow */
+  
+  transition: 
+      transform 0.4s ease,
+      text-shadow 0.4s ease,
+      color 0.3s ease;
+}
+
+.stat-title:hover {
+  color: var(--color-secondary);
+  transform: translateY(-5px);
+  
+}
+
+
+
+
+
+
+
 
 .tools-container {
     display: grid;
