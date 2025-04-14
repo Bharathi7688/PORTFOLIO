@@ -11,6 +11,8 @@
             });
         });
 
+       
+
         // Theme button toggle
         const themeBtn = document.querySelector(".theme-btn");
         if (!themeBtn) {
@@ -130,3 +132,12 @@
         }
     });
 })();
+
+
+function updateFooterTime() {
+    const timeElement = document.getElementById('footer-time');
+    const now = new Date();
+    timeElement.textContent = `Current Time: ${now.toLocaleTimeString()}`;
+  }
+  setInterval(updateFooterTime, 1000);
+  updateFooterTime();
