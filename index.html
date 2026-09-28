@@ -9,7 +9,9 @@
     <meta property="og:title" content="Bharathidasan R — Software Engineer">
     <meta property="og:description" content="Full stack web & mobile developer. Angular · React · Flutter · .NET · Node.js">
     <meta property="og:image" content="img/me/hero.jpg">
-    <link rel="icon" href="img/icons8-b-32.png">
+    <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 
     <script>
         // Apply saved/system theme before paint to avoid a flash
@@ -39,7 +41,7 @@
     <header class="nav" id="nav">
         <div class="nav-inner wrap">
             <a href="#home" class="logo" aria-label="Bharathidasan R — home">
-                <span class="logo-mark">B</span><span class="logo-text">harathidasan<span class="dot">.</span></span>
+                <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M19 15.5V48.5M19 15.5H31.5A8.25 8.25 0 0 1 31.5 32H19M19 32H33.5A8.25 8.25 0 0 1 33.5 48.5H19" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48.5" cy="45.5" r="4" fill="#f472b6"/></svg></span><span class="logo-text">Bharathidasan<span class="dot">.</span></span>
             </a>
 
             <nav class="nav-links" id="nav-links" aria-label="Primary">
@@ -108,20 +110,37 @@
                 </div>
 
                 <div class="hero-visual reveal">
+                    <div class="orbit orbit-1" aria-hidden="true"><span></span></div>
+                    <div class="orbit orbit-2" aria-hidden="true"><span></span></div>
+
                     <div class="avatar-ring">
                         <div class="avatar">
                             <img src="img/me/hero-cut.webp" alt="Portrait of Bharathidasan R" width="1000" height="1430" fetchpriority="high">
                         </div>
                     </div>
-                    <div class="float-chip chip-1"><i class="devicon-angularjs-plain colored"></i> Angular</div>
-                    <div class="float-chip chip-2"><i class="devicon-flutter-plain colored"></i> Flutter</div>
-                    <div class="float-chip chip-3"><i class="devicon-dotnetcore-plain colored"></i> .NET Core</div>
-                    <div class="float-card">
-                        <i class="fa-solid fa-location-dot"></i>
-                        <div>
-                            <strong>Chennai, India</strong>
-                            <span>Open to collaborations</span>
-                        </div>
+
+                    <div class="code-card" aria-hidden="true">
+                        <div class="code-bar"><i></i><i></i><i></i><span>dev.ts</span></div>
+<pre><code><span class="k">const</span> <span class="v">dev</span> = {
+  name: <span class="s">'Bharathidasan'</span>,
+  role: <span class="s">'Software Engineer'</span>,
+  stack: [<span class="s">'.NET'</span>, <span class="s">'Angular'</span>],
+  available: <span class="b">true</span>
+};</code></pre>
+                    </div>
+
+                    <ul class="tech-rail" aria-label="Core stack">
+                        <li title="Angular"><i class="devicon-angularjs-plain colored"></i></li>
+                        <li title=".NET Core"><i class="devicon-dotnetcore-plain colored"></i></li>
+                        <li title="Flutter"><i class="devicon-flutter-plain colored"></i></li>
+                        <li title="React"><i class="devicon-react-original colored"></i></li>
+                        <li title="Azure"><i class="devicon-azure-plain colored"></i></li>
+                    </ul>
+
+                    <div class="hero-stats">
+                        <div><strong>2+</strong><span>Years<br>experience</span></div>
+                        <div class="hs-sep" aria-hidden="true"></div>
+                        <div><strong>12+</strong><span>Projects<br>shipped</span></div>
                     </div>
                 </div>
             </div>
@@ -599,7 +618,7 @@
                 <div class="contact-grid">
                     <div class="contact-info reveal">
                         <figure class="contact-photo">
-                            <img src="img/me/contact-cut.webp" alt="Bharathidasan R in a printed shirt" width="1000" height="1830" loading="lazy">
+                            <img src="img/me/contact-cut.webp" alt="Bharathidasan R in a printed shirt" width="980" height="1790" loading="lazy">
                             <figcaption>
                                 <span class="status-pill"><span class="pulse"></span> Available for opportunities</span>
                                 <strong>Let's talk about your next idea.</strong>
@@ -656,7 +675,7 @@
     <footer class="footer">
         <div class="wrap footer-inner">
             <a href="#home" class="logo">
-                <span class="logo-mark">B</span><span class="logo-text">harathidasan<span class="dot">.</span></span>
+                <span class="logo-mark" aria-hidden="true"><svg viewBox="0 0 64 64"><path d="M19 15.5V48.5M19 15.5H31.5A8.25 8.25 0 0 1 31.5 32H19M19 32H33.5A8.25 8.25 0 0 1 33.5 48.5H19" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="48.5" cy="45.5" r="4" fill="#f472b6"/></svg></span><span class="logo-text">Bharathidasan<span class="dot">.</span></span>
             </a>
             <p>© <span id="year"></span> Bharathidasan R. Designed &amp; built with care.</p>
             <div class="footer-socials">
