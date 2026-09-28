@@ -1,611 +1,657 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Bharathidasan R — Software Engineer</title>
+    <meta name="description" content="Bharathidasan R — Software Engineer at Tenxity Solutions. Full stack web & mobile developer building clean, scalable applications with Angular, React, Flutter, .NET, Node.js and Spring Boot.">
+    <meta name="theme-color" content="#0b0d17">
+    <meta property="og:title" content="Bharathidasan R — Software Engineer">
+    <meta property="og:description" content="Full stack web & mobile developer. Angular · React · Flutter · .NET · Node.js">
+    <meta property="og:image" content="img/my%20picture.png">
     <link rel="icon" href="img/icons8-b-32.png">
-    <link rel="stylesheet" href="style.css">
+
+    <script>
+        // Apply saved/system theme before paint to avoid a flash
+        (function () {
+            try {
+                var saved = localStorage.getItem('theme');
+                var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+        })();
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+    <link rel="stylesheet" href="style.css">
+    <noscript><style>.reveal { opacity: 1; }</style></noscript>
 </head>
-<body class="main-content">
-    <header class="container header active" id="home">
-        <div class="header-content">
-            <div class="left-header">
-                <div class="h-shape"></div>
-                <div class="image">
-                    <img src="img/my picture.png" alt="Bharathidasan R Profile Picture">
-                </div>
-            </div>
-            <div class="right-header">
-                <div class="text-3d-pro">
-                    <h1 class="name">Hello, I’m <span>Bharathidasan R</span></h1>
-                    <h3 class="role">I’m a <span id="text"></span></h3>
-                    <p class="description">
-                        A dedicated Web Developer with a passion for creating responsive, user-focused digital solutions.
-                    </p>
-                    <div class="pro-details">
-                        <div class="detail-item">
-                            <span class="detail-label">Experience:</span>
-                            <span class="detail-value">2+ Years in Web & Software Development</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Expertise:</span>
-                            <span class="detail-value">Frontend & Backend Technologies</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Focus:</span>
-                            <span class="detail-value">UI/UX Design & Performance Optimization</span>
-                        </div>
-                    </div>
-                    <div class="btn-con">
-                        <a href="assets/My-Resume.pdf" class="main-btn" download="Bharathidasan_Resume.pdf" aria-label="Download Bharathidasan's Resume">
-                            <span class="btn-text">Download CV</span>
-                            <span class="btn-icon"><i class="fas fa-download"></i></span>
-                        </a>
-                    </div>
-                </div>
+<body>
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <!-- ============ NAVBAR ============ -->
+    <header class="nav" id="nav">
+        <div class="nav-inner wrap">
+            <a href="#home" class="logo" aria-label="Bharathidasan R — home">
+                <span class="logo-mark">B</span><span class="logo-text">harathidasan<span class="dot">.</span></span>
+            </a>
+
+            <nav class="nav-links" id="nav-links" aria-label="Primary">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="icon-btn theme-toggle" id="theme-toggle" aria-label="Toggle light / dark theme">
+                    <i class="fa-solid fa-sun"></i>
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <a href="assets/My-Resume.pdf" class="btn btn-sm btn-primary hide-sm" download="Bharathidasan_Resume.pdf">
+                    <i class="fa-solid fa-download"></i> Resume
+                </a>
+                <button class="icon-btn menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
         </div>
     </header>
 
     <main>
-        <section class="container about" id="about">
-            <div class="main-title">
-                <h2>About <span>me</span><span class="bg-text">my status</span></h2>
-            </div>
-            <div class="about-container">
-                <div class="left-about">
-                    <h4>Information About Me</h4>
-                    <p>
-                        Hi, I’m Bharathidasan R from Trichy, currently pursuing my Bachelor’s degree in Electronics and Communication Engineering at SNS College of Technology, Coimbatore. 
-                        My passion lies in web and app development, where I blend creativity and technical skills to build impactful solutions. 
-                        I’ve gained hands-on experience through internships: Front-End Development at Code Infinite and Back-End Development at Digital Media. 
-                        With expertise in HTML, CSS, JavaScript, React.js, Python, and Java, I’m always eager to explore new technologies like UI/UX design and Kotlin. 
-                        Outside of coding, I enjoy playing chess, reading, and drawing.
-                    </p>  
-                    <div class="btn-con">
-                        <a href="assets/My-Resume.pdf" class="main-btn" download="Bharathidasan_Resume.pdf" aria-label="Download Bharathidasan's Resume">
-                            <span class="btn-text">Download CV</span>
-                            <span class="btn-icon"><i class="fas fa-download"></i></span>
+        <!-- ============ HERO ============ -->
+        <section class="hero" id="home">
+            <div class="orb orb-1" aria-hidden="true"></div>
+            <div class="orb orb-2" aria-hidden="true"></div>
+            <div class="orb orb-3" aria-hidden="true"></div>
+
+            <div class="wrap hero-grid">
+                <div class="hero-copy">
+                    <span class="status-pill reveal">
+                        <span class="pulse"></span> Software Engineer @ Tenxity Solutions
+                    </span>
+                    <h1 class="hero-title reveal">
+                        Hi, I'm <span class="gradient-text">Bharathidasan R</span>
+                    </h1>
+                    <p class="hero-role reveal">
+                        <span class="role-prefix">&gt;</span>
+                        <span id="typed" class="typed" aria-live="polite"></span><span class="caret" aria-hidden="true"></span>
+                    </p>
+                    <p class="hero-desc reveal">
+                        Full stack web &amp; mobile developer and certified design thinker. I turn complex
+                        ideas into clean, scalable applications — from pixel-perfect UI to robust APIs and databases.
+                    </p>
+
+                    <div class="hero-cta reveal">
+                        <a href="#projects" class="btn btn-primary magnetic">
+                            View my work <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a href="assets/My-Resume.pdf" class="btn btn-ghost magnetic" download="Bharathidasan_Resume.pdf">
+                            <i class="fa-solid fa-file-arrow-down"></i> Download CV
                         </a>
                     </div>
-                </div>
-                <div class="right-about">
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">0+</p>
-                            <p class="small-text">Projects <br /> Completed</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">2+</p>
-                            <p class="small-text">Years of<br /> Experience</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">0+</p>
-                            <p class="small-text">Happy<br /> Clients</p>
-                        </div>
-                    </div>
-                    <div class="about-item">
-                        <div class="abt-text">
-                            <p class="large-text">0+</p>
-                            <p class="small-text">Customer<br /> Reviews</p>
-                        </div>
+
+                    <div class="hero-socials reveal">
+                        <a href="https://www.linkedin.com/in/bharathidasan7688/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://github.com/Bharathi7688" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                        <a href="mailto:bharathiraj7688@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+                        <a href="https://www.instagram.com/bharathi_.r._" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
-            </div>
-            <div class="about-stats">
-                <h4 class="stat-title">My Skills</h4>
-                <div class="progress-bars">
-                    <div class="progress-bar">
-                        <p class="prog-title">HTML</p>
-                        <div class="progress-con">
-                            <p class="prog-text">80%</p>
-                            <div class="progress">
-                                <span class="Html"></span>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="progress-bar">
-                        <p class="prog-title">CSS</p>
-                        <div class="progress-con">
-                            <p class="prog-text">80%</p>
-                            <div class="progress">
-                                <span class="CSS"></span>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="progress-bar">
-                        <p class="prog-title">JavaScript</p>
-                        <div class="progress-con">
-                            <p class="prog-text">50%</p>
-                            <div class="progress">
-                                <span class="js"></span>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="progress-bar">
-                        <p class="prog-title">ReactJS</p>
-                        <div class="progress-con">
-                            <p class="prog-text">30%</p>
-                            <div class="progress">
-                                <span class="react"></span>
-                            </div>
-                        </div>
-                    </div>  
-                    <div class="progress-bar">
-                        <p class="prog-title">Python</p>
-                        <div class="progress-con">
-                            <p class="prog-text">40%</p>
-                            <div class="progress">
-                                <span class="python"></span>
-                            </div>
+
+                <div class="hero-visual reveal">
+                    <div class="avatar-ring">
+                        <div class="avatar">
+                            <img src="img/my%20picture.png" alt="Portrait of Bharathidasan R" width="420" height="420">
                         </div>
                     </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">NextJS</p>
-                        <div class="progress-con">
-                            <p class="prog-text">20%</p>
-                            <div class="progress">
-                                <span class="nextjs"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">Java</p>
-                        <div class="progress-con">
-                            <p class="prog-text">40%</p>
-                            <div class="progress">
-                                <span class="java"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">Kotlin</p>
-                        <div class="progress-con">
-                            <p class="prog-text">60%</p>
-                            <div class="progress">
-                                <span class="kotlin"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="progress-bar">
-                        <p class="prog-title">C#</p>
-                        <div class="progress-con">
-                            <p class="prog-text">20%</p>
-                            <div class="progress">
-                                <span class="csharp"></span>
-                            </div>
+                    <div class="float-chip chip-1"><i class="devicon-angularjs-plain colored"></i> Angular</div>
+                    <div class="float-chip chip-2"><i class="devicon-flutter-plain colored"></i> Flutter</div>
+                    <div class="float-chip chip-3"><i class="devicon-dotnetcore-plain colored"></i> .NET Core</div>
+                    <div class="float-card">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>Chennai, India</strong>
+                            <span>Open to collaborations</span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="about-tools">
-                <h4 class="stat-title">My Tools</h4>
-                <div class="tools-container">
-                    <div class="tool-card" data-tool="VS Code">
-                        <i class="fas fa-code"></i>
-                        <span>VS Code</span>
-                    </div>
-                    <div class="tool-card" data-tool="Git">
-                        <i class="fab fa-git-alt"></i>
-                        <span>Git</span>
-                    </div>
-                    <div class="tool-card" data-tool="GitHub">
-                        <i class="fab fa-github"></i>
-                        <span>GitHub</span>
-                    </div>
-                    <div class="tool-card" data-tool="GitLab">
-                        <i class="fab fa-gitlab"></i>
-                        <span>GitLab</span>
-                    </div>
-                    <div class="tool-card" data-tool="Android Studio">
-                        <i class="fab fa-android"></i>
-                        <span>Android Studio</span>
-                    </div>
-                    <div class="tool-card" data-tool="MSSQL">
-                        <i class="fas fa-database"></i>
-                        <span>MSSQL</span>
-                    </div>
-                    <div class="tool-card" data-tool="Microsoft 365">
-                        <i class="fas fa-file-word"></i>
-                        <span>Microsoft 365</span>
-                    </div>
-                    <div class="tool-card" data-tool="IntelliJ IDEA">
-                        <i class="fas fa-code-branch"></i>
-                        <span>IntelliJ IDEA</span>
-                    </div>
-                    <div class="tool-card" data-tool="PyCharm">
-                        <i class="fab fa-python"></i>
-                        <span>PyCharm</span>
-                    </div>
-                    <div class="tool-card" data-tool="Docker">
-                        <i class="fab fa-docker"></i>
-                        <span>Docker</span>
-                    </div>
-                    <div class="tool-card" data-tool="MongoDB">
-                        <i class="fas fa-leaf"></i>
-                        <span>MongoDB</span>
-                    </div>
-                    <div class="tool-card" data-tool="Firebase">
-                        <i class="fas fa-fire"></i>
-                        <span>Firebase</span>
-                    </div>
-                    <div class="tool-card" data-tool="Node.js">
-                        <i class="fab fa-node-js"></i>
-                        <span>Node.js</span>
-                    </div>
-                    <div class="tool-card" data-tool="Eclipse">
-                        <i class="fas fa-circle-notch"></i>
-                        <span>Eclipse</span>
-                    </div>
-                    <div class="tool-card" data-tool="Visual Studio">
-                        <i class="fas fa-code"></i>
-                        <span>Visual Studio</span>
-                    </div>
-                    <div class="tool-card" data-tool="Postman">
-                        <i class="fas fa-paper-plane"></i>
-                        <span>Postman</span>
-                    </div>
-                    <div class="tool-card" data-tool="Canva">
-                        <i class="fas fa-paint-brush"></i>
-                        <span>Canva</span>
-                    </div>
-                </div>
-            </div>
+
+            <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+                <span class="mouse"><span class="wheel"></span></span>
+            </a>
         </section>
-        
-        <section class="container" id="portfolio">
-            <div class="main-title">
-                <h2>My <span>Projects</span><span class="bg-text">My Work</span></h2>
+
+        <!-- ============ MARQUEE ============ -->
+        <div class="marquee" aria-hidden="true">
+            <div class="marquee-track">
+                <span>Angular</span><i>✦</i><span>React</span><i>✦</i><span>Flutter</span><i>✦</i><span>C# / .NET</span><i>✦</i>
+                <span>Node.js</span><i>✦</i><span>Spring Boot</span><i>✦</i><span>MSSQL</span><i>✦</i><span>Azure</span><i>✦</i>
+                <span>UI / UX</span><i>✦</i><span>IoT</span><i>✦</i><span>Design Thinking</span><i>✦</i>
+                <span>Angular</span><i>✦</i><span>React</span><i>✦</i><span>Flutter</span><i>✦</i><span>C# / .NET</span><i>✦</i>
+                <span>Node.js</span><i>✦</i><span>Spring Boot</span><i>✦</i><span>MSSQL</span><i>✦</i><span>Azure</span><i>✦</i>
+                <span>UI / UX</span><i>✦</i><span>IoT</span><i>✦</i><span>Design Thinking</span><i>✦</i>
             </div>
-            <p class="port-text">
-                Here is some of my work that I've done in various programming languages.
-            </p>
-            <div class="portfolios">
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/e commerce.jpg" alt="E-commerce Project">
-                    </div>
-                    <div class="hover-items">
-                        <h3>E-COMMERCE</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Bharathi7688/E-COMMERCE" class="icon" target="_blank" aria-label="View E-commerce project on GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://bharathi-e-commerce.vercel.app/" class="icon" target="_blank" aria-label="Visit E-commerce project website">
-                                <i class="bi bi-cart"></i>
-                            </a>
-                        </div>
-                    </div>
+        </div>
+
+        <!-- ============ ABOUT ============ -->
+        <section class="section" id="about">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="eyebrow">01 — About</span>
+                    <h2>Engineering with <span class="gradient-text">purpose</span> &amp; design thinking</h2>
                 </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/parallax.jpg" alt="Parallax Project">
-                    </div>
-                    <div class="hover-items">
-                        <h3>PARALLAX</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Bharathi7688/PARALLAX" class="icon" target="_blank" aria-label="View Parallax project on GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://parallax-three-omega.vercel.app/" class="icon" target="_blank" aria-label="Visit Parallax project website">
-                                <i class="bi bi-rocket-takeoff-fill"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/login.jpg" alt="Login Page Project">
-                    </div>
-                    <div class="hover-items">
-                        <h3>LOGIN-PAGE</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Bharathi7688/Double-Slider-Login-page" class="icon" target="_blank" aria-label="View Login Page project on GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://double-slider-login-page.vercel.app/" class="icon" target="_blank" aria-label="Visit Login Page project website">
-                                <i class="bi bi-box-arrow-in-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/tic tak toe.jpg" alt="Tic Tac Toe Project">
-                    </div>
-                    <div class="hover-items">
-                        <h3>TIC TAC TOE</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Bharathi7688/TIC-TAC-TOE" class="icon" target="_blank" aria-label="View Tic Tac Toe project on GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://tic-tac-toe-gamma-lake.vercel.app/" class="icon" target="_blank" aria-label="Visit Tic Tac Toe project website">
-                                <i class="bi bi-controller"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/joker.jpg" alt="Jokes API Project">
-                    </div>
-                    <div class="hover-items">
-                        <h3>JOKES API</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Bharathi7688/JOKES-API" class="icon" target="_blank" aria-label="View Jokes API project on GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://jokes-api-navy.vercel.app/" class="icon" target="_blank" aria-label="Visit Jokes API project website">
-                                <i class="bi bi-emoji-laughing"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/color.jpg" alt="Color Flipper Project">
-                    </div>
-                    <div class="hover-items">
-                        <h3>COLOR FLIPPER</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Bharathi7688/COLOR-FLIPPER" class="icon" target="_blank" aria-label="View Color Flipper project on GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://color-flipper-lemon-nine.vercel.app/" class="icon" target="_blank" aria-label="Visit Color Flipper project website">
-                                <i class="bi bi-palette-fill"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/password.jpg" alt="Password Generator Project">
-                    </div>
-                    <div class="hover-items">
-                        <h3>PASSWORD GENERATOR</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Bharathi7688/PASSWORD-GENERATOR" class="icon" target="_blank" aria-label="View Password Generator project on GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://password-generator-omega-eight.vercel.app/" class="icon" target="_blank" aria-label="Visit Password Generator project website">
-                                <i class="bi bi-key"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/drawing.jpg" alt="Drawing Box Project">
-                    </div>
-                    <div class="hover-items">
-                        <h3>DRAWING BOX</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Bharathi7688/Drawing-Box" class="icon" target="_blank" aria-label="View Drawing Box project on GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://drawing-box.vercel.app/" class="icon" target="_blank" aria-label="Visit Drawing Box project website">
-                                <i class="bi bi-pen"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/weather.jpg" alt="Weather App Project">
-                    </div>
-                    <div class="hover-items">
-                        <h3>WEATHER</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Bharathi7688/Weather-App" class="icon" target="_blank" aria-label="View Weather App project on GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://weather-app-inky-eight-89.vercel.app/" class="icon" target="_blank" aria-label="Visit Weather App project website">
-                                <i class="bi bi-cloud-sun"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/music.jpg" alt="Music Player Project">
-                    </div>
-                    <div class="hover-items">
-                        <h3>MUSIC PLAYER</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Bharathi7688/Music-Player" class="icon" target="_blank" aria-label="View Music Player project on GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://music-player-delta-nine.vercel.app/" class="icon" target="_blank" aria-label="Visit Music Player project website">
-                                <i class="bi bi-play"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/redbus.webp" alt="RedBus Clone Project">
-                    </div>
-                    <div class="hover-items">
-                        <h3>RED BUS</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Bharathi7688/RedBus-Clone" class="icon" target="_blank" aria-label="View RedBus Clone project on GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://red-bus-clone-umber.vercel.app/" class="icon" target="_blank" aria-label="Visit RedBus Clone project website">
-                                <i class="bi bi-bus-front"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="portfolio-item">
-                    <div class="image">
-                        <img src="img/gif.jpg" alt="GIF Generator Project">
-                    </div>
-                    <div class="hover-items">
-                        <h3>GIF GENERATOR</h3>
-                        <div class="icons">
-                            <a href="https://github.com/Bharathi7688/GIF-GENERATOR" class="icon" target="_blank" aria-label="View GIF Generator project on GitHub">
-                                <i class="fab fa-github"></i>
-                            </a>
-                            <a href="https://gif-generator-theta.vercel.app/" class="icon" target="_blank" aria-label="Visit GIF Generator project website">
-                                <i class="bi bi-image"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="container contact" id="contact">
-            <div class="contact-container">
-                <div class="main-title">
-                    <h2>Contact <span>Me</span><span class="bg-text">Contact</span></h2>
-                </div>
-                <div class="contact-content-con">
-                    <div class="left-contact">
-                        <h4>Contact Me Here</h4>
+
+                <div class="about-grid">
+                    <div class="about-copy reveal">
                         <p>
-                            I’m excited to connect with you! Whether it’s for a project collaboration, a quick question, or just to chat about tech, feel free to reach out.
+                            I'm <strong>Bharathidasan R</strong>, a Software Engineer at <strong>Tenxity Solutions Private Limited</strong>
+                            in Chennai. As a full stack developer, I design and ship enterprise-grade web applications with a
+                            focus on robust UI/UX, optimized database integration and scalable API performance in Agile teams.
                         </p>
-                        <div class="contact-info">
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Location</span>
-                                </div>
-                                <p><span>Chennai, Tamil Nadu</span></p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-envelope"></i>
-                                    <span>Email</span>
-                                </div>
-                                <p><span>bharathiraj7688@gmail.com</span></p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-user-graduate"></i>
-                                    <span>Education</span>
-                                </div>
-                                <p><span>SNS College of Technology</span></p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-mobile"></i>
-                                    <span>Mobile Number</span>
-                                </div>
-                                <p><span>+919047900884</span></p>
-                            </div>
-                            <div class="contact-item">
-                                <div class="icon">
-                                    <i class="fas fa-globe-africa"></i>
-                                    <span>Languages</span>
-                                </div>
-                                <p><span>Tamil, English</span></p>
-                            </div>
-                        </div>
-                        
+                        <p>
+                            I hold a B.E. in Electronics &amp; Communication Engineering from SNS College of Technology (Anna University),
+                            and I'm a certified <em>Aspiring Architect</em> and <em>IBM Design Thinker</em>. My experience spans
+                            mobile, web and embedded platforms — across domains like e-commerce, automation, agriculture and IoT.
+                        </p>
+                        <p>
+                            Outside of code, you'll find me playing chess, reading, drawing, or volunteering — I've organised
+                            blood donation camps and health awareness programs as an NSS volunteer.
+                        </p>
+
+                        <ul class="about-facts">
+                            <li><i class="fa-solid fa-briefcase"></i><span>Software Engineer, Tenxity Solutions</span></li>
+                            <li><i class="fa-solid fa-graduation-cap"></i><span>B.E. ECE — SNS College of Technology</span></li>
+                            <li><i class="fa-solid fa-location-dot"></i><span>Chennai, Tamil Nadu</span></li>
+                            <li><i class="fa-solid fa-language"></i><span>Tamil, English</span></li>
+                        </ul>
                     </div>
-                    <div class="right-contact">
-                        <h4>Let’s Connect!</h4>
-                        <p class="intro-text">Drop me a message—I’d love to hear about your projects, ideas, or just say hi!</p>
-                        <form action="https://formspree.io/f/your-form-id" method="POST" class="contact-form" id="contact-form">
-                            <div class="input-control i-c-2">
-                                <input type="text" name="name" required placeholder="YOUR NAME" aria-label="Your Name">
-                                <input type="email" name="email" required placeholder="YOUR EMAIL" aria-label="Your Email">
-                            </div>
-                            <div class="input-control i-c-2">
-                                <input type="text" name="subject" required placeholder="ENTER SUBJECT" aria-label="Subject">
-                                <input type="tel" name="phone" placeholder="PHONE (OPTIONAL)" aria-label="Phone Number">
-                            </div>
-                            <div class="input-control">
-                                <select name="inquiry" required aria-label="Inquiry Type">
-                                    <option value="" disabled selected>SELECT INQUIRY TYPE</option>
-                                    <option value="collaboration">Collaboration</option>
-                                    <option value="project">Project Inquiry</option>
-                                    <option value="feedback">Feedback</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="input-control">
-                                <textarea name="message" cols="15" rows="8" placeholder="Message Here..." required aria-label="Your Message"></textarea>
-                            </div>
-                            <div class="input-control checkbox-control">
-                                <label>
-                                    <input type="checkbox" name="subscribe" value="yes" aria-label="Subscribe to newsletter">
-                                    Subscribe to my newsletter for updates!
-                                </label>
-                            </div>
-                            <div class="submit-btn">
-                                <button type="submit" class="m-btn" aria-label="Send Message">
-                                    <span class="btn-text">Send Message</span>
-                                    <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
-                                </button>
-                            </div>
-                            <p class="success-message" style="display: none;">Thanks for your message! I’ll get back to you soon.</p>
-                            <p class="error-message" style="display: none;">Oops! Something went wrong. Please try again.</p>
-                        </form>
+
+                    <div class="stats reveal">
+                        <div class="stat-card tilt">
+                            <span class="stat-num" data-count="2" data-suffix="+">0</span>
+                            <span class="stat-label">Years building software</span>
+                        </div>
+                        <div class="stat-card tilt">
+                            <span class="stat-num" data-count="12" data-suffix="+">0</span>
+                            <span class="stat-label">Projects shipped</span>
+                        </div>
+                        <div class="stat-card tilt">
+                            <span class="stat-num" data-count="4" data-suffix="">0</span>
+                            <span class="stat-label">Certifications</span>
+                        </div>
+                        <div class="stat-card tilt">
+                            <span class="stat-num" data-count="20" data-suffix="+">0</span>
+                            <span class="stat-label">Technologies</span>
+                        </div>
                     </div>
                 </div>
             </div>
-            <footer class="footer">
-                <div class="footer-text">
-                  <p>Copyright © 2024 | All Rights Reserved.</p>
+        </section>
+
+        <!-- ============ EXPERIENCE ============ -->
+        <section class="section section-alt" id="experience">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="eyebrow">02 — Journey</span>
+                    <h2>Experience &amp; <span class="gradient-text">education</span></h2>
                 </div>
-                <div class="footer-socials">
-                    <a href="https://www.facebook.com/bharathithasan.thasan.54" target="_blank">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="https://www.instagram.com/bharathi_.r._?igsh=MWQzMGtpMDU5c21mcw==" target="_blank">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="https://github.com/Bharathi7688" target="_blank">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/bharathidasan7688" target="_blank">
-                        <i class="fab fa-linkedin"></i>
+
+                <div class="timeline">
+                    <article class="tl-item reveal">
+                        <div class="tl-dot"><i class="fa-solid fa-code"></i></div>
+                        <div class="tl-card">
+                            <div class="tl-meta">
+                                <span class="tl-date">2025 — Present</span>
+                                <span class="tl-tag current">Current</span>
+                            </div>
+                            <h3>Software Engineer</h3>
+                            <p class="tl-org">Tenxity Solutions Private Limited · Chennai</p>
+                            <ul>
+                                <li>Design, build and deploy enterprise-level web applications as a full stack developer.</li>
+                                <li>Own robust UI/UX, optimized database integration and scalable REST API performance.</li>
+                                <li>Deliver features in an Agile environment with C#/.NET, Angular, MSSQL and Azure.</li>
+                            </ul>
+                            <div class="tl-tech">
+                                <span>C# .NET</span><span>Angular</span><span>MSSQL</span><span>Azure</span><span>REST</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tl-item reveal">
+                        <div class="tl-dot"><i class="fa-solid fa-server"></i></div>
+                        <div class="tl-card">
+                            <div class="tl-meta">
+                                <span class="tl-date">Internship</span>
+                            </div>
+                            <h3>Back-End Developer Intern</h3>
+                            <p class="tl-org">Digital Media</p>
+                            <ul>
+                                <li>Built and maintained server-side logic and RESTful APIs.</li>
+                                <li>Worked with databases and integrations powering client-facing features.</li>
+                            </ul>
+                            <div class="tl-tech">
+                                <span>Node.js</span><span>REST APIs</span><span>Databases</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tl-item reveal">
+                        <div class="tl-dot"><i class="fa-solid fa-palette"></i></div>
+                        <div class="tl-card">
+                            <div class="tl-meta">
+                                <span class="tl-date">Internship</span>
+                            </div>
+                            <h3>Front-End Developer Intern</h3>
+                            <p class="tl-org">Code Infinite</p>
+                            <ul>
+                                <li>Developed responsive, accessible interfaces from design mockups.</li>
+                                <li>Sharpened fundamentals in HTML, CSS, JavaScript and React.</li>
+                            </ul>
+                            <div class="tl-tech">
+                                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>React</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="tl-item reveal">
+                        <div class="tl-dot"><i class="fa-solid fa-graduation-cap"></i></div>
+                        <div class="tl-card">
+                            <div class="tl-meta">
+                                <span class="tl-date">Education</span>
+                            </div>
+                            <h3>B.E. Electronics &amp; Communication Engineering</h3>
+                            <p class="tl-org">SNS College of Technology, Coimbatore · Anna University</p>
+                            <ul>
+                                <li>Embedded device &amp; product design and prototyping; IoT projects.</li>
+                                <li>NSS volunteer — organised blood camps and health awareness programs.</li>
+                            </ul>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="certs">
+                    <h3 class="sub-head reveal">Certifications</h3>
+                    <div class="cert-grid">
+                        <div class="cert-card reveal tilt">
+                            <i class="fa-solid fa-drafting-compass"></i>
+                            <h4>Certified Aspiring Architect</h4>
+                            <p>CFC, SNS College of Engineering &amp; Technology</p>
+                        </div>
+                        <div class="cert-card reveal tilt">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <h4>Certified Design Thinker</h4>
+                            <p>IBM</p>
+                        </div>
+                        <div class="cert-card reveal tilt">
+                            <i class="fa-brands fa-java"></i>
+                            <h4>Java Programming</h4>
+                            <p>MSME-TDC</p>
+                        </div>
+                        <div class="cert-card reveal tilt">
+                            <i class="fa-solid fa-microchip"></i>
+                            <h4>Industry &amp; Industrial IoT</h4>
+                            <p>NPTEL</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ SKILLS ============ -->
+        <section class="section" id="skills">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="eyebrow">03 — Toolkit</span>
+                    <h2>Skills &amp; <span class="gradient-text">technologies</span></h2>
+                    <p class="section-sub">A stack chosen for building reliable products end to end — interface, logic, data and delivery.</p>
+                </div>
+
+                <div class="skill-groups">
+                    <div class="skill-group reveal">
+                        <div class="sg-head"><i class="fa-solid fa-layer-group"></i><h3>Frontend</h3></div>
+                        <div class="chips">
+                            <span class="chip"><i class="devicon-angularjs-plain colored"></i>Angular</span>
+                            <span class="chip"><i class="devicon-react-original colored"></i>React</span>
+                            <span class="chip"><i class="devicon-typescript-plain colored"></i>TypeScript</span>
+                            <span class="chip"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+                            <span class="chip"><i class="devicon-html5-plain colored"></i>HTML5</span>
+                            <span class="chip"><i class="devicon-css3-plain colored"></i>CSS3</span>
+                            <span class="chip"><i class="devicon-bootstrap-plain colored"></i>Bootstrap</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group reveal">
+                        <div class="sg-head"><i class="fa-solid fa-server"></i><h3>Backend</h3></div>
+                        <div class="chips">
+                            <span class="chip"><i class="devicon-dotnetcore-plain colored"></i>.NET Core</span>
+                            <span class="chip"><i class="devicon-csharp-plain colored"></i>C#</span>
+                            <span class="chip"><i class="devicon-nodejs-plain colored"></i>Node.js</span>
+                            <span class="chip"><i class="devicon-express-original"></i>Express.js</span>
+                            <span class="chip"><i class="devicon-spring-plain colored"></i>Spring Boot</span>
+                            <span class="chip"><i class="devicon-java-plain colored"></i>Java</span>
+                            <span class="chip"><i class="devicon-python-plain colored"></i>Python</span>
+                            <span class="chip"><i class="fa-solid fa-plug"></i>REST APIs</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group reveal">
+                        <div class="sg-head"><i class="fa-solid fa-mobile-screen"></i><h3>Mobile</h3></div>
+                        <div class="chips">
+                            <span class="chip"><i class="devicon-flutter-plain colored"></i>Flutter</span>
+                            <span class="chip"><i class="devicon-dart-plain colored"></i>Dart</span>
+                            <span class="chip"><i class="devicon-kotlin-plain colored"></i>Kotlin</span>
+                            <span class="chip"><i class="devicon-android-plain colored"></i>Android SDK</span>
+                            <span class="chip"><i class="fa-solid fa-table-cells"></i>Jetpack Compose</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group reveal">
+                        <div class="sg-head"><i class="fa-solid fa-database"></i><h3>Data &amp; Cloud</h3></div>
+                        <div class="chips">
+                            <span class="chip"><i class="devicon-microsoftsqlserver-plain colored"></i>MSSQL</span>
+                            <span class="chip"><i class="devicon-mysql-plain colored"></i>MySQL</span>
+                            <span class="chip"><i class="devicon-mongodb-plain colored"></i>MongoDB</span>
+                            <span class="chip"><i class="devicon-firebase-plain colored"></i>Firebase</span>
+                            <span class="chip"><i class="devicon-azure-plain colored"></i>Azure</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group reveal">
+                        <div class="sg-head"><i class="fa-solid fa-screwdriver-wrench"></i><h3>Tools</h3></div>
+                        <div class="chips">
+                            <span class="chip"><i class="devicon-git-plain colored"></i>Git</span>
+                            <span class="chip"><i class="devicon-github-original"></i>GitHub</span>
+                            <span class="chip"><i class="devicon-gitlab-plain colored"></i>GitLab</span>
+                            <span class="chip"><i class="devicon-vscode-plain colored"></i>VS Code</span>
+                            <span class="chip"><i class="devicon-visualstudio-plain colored"></i>Visual Studio</span>
+                            <span class="chip"><i class="devicon-androidstudio-plain colored"></i>Android Studio</span>
+                            <span class="chip"><i class="devicon-postman-plain colored"></i>Postman</span>
+                            <span class="chip"><i class="fa-brands fa-microsoft"></i>Power Platform</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group reveal">
+                        <div class="sg-head"><i class="fa-solid fa-brain"></i><h3>Practices</h3></div>
+                        <div class="chips">
+                            <span class="chip"><i class="fa-solid fa-lightbulb"></i>Design Thinking</span>
+                            <span class="chip"><i class="fa-solid fa-pen-ruler"></i>UI / UX</span>
+                            <span class="chip"><i class="fa-solid fa-arrows-rotate"></i>Agile</span>
+                            <span class="chip"><i class="fa-solid fa-microchip"></i>IoT &amp; Embedded</span>
+                            <span class="chip"><i class="fa-solid fa-wand-magic-sparkles"></i>Generative AI</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ============ PROJECTS ============ -->
+        <section class="section section-alt" id="projects">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="eyebrow">04 — Work</span>
+                    <h2>Selected <span class="gradient-text">projects</span></h2>
+                    <p class="section-sub">A collection of things I've built — every project is live and open source.</p>
+                </div>
+
+                <div class="filters reveal" role="tablist" aria-label="Filter projects">
+                    <button class="filter active" data-filter="all" role="tab" aria-selected="true">All</button>
+                    <button class="filter" data-filter="app" role="tab" aria-selected="false">Web Apps</button>
+                    <button class="filter" data-filter="api" role="tab" aria-selected="false">API</button>
+                    <button class="filter" data-filter="ui" role="tab" aria-selected="false">UI &amp; Fun</button>
+                </div>
+
+                <div class="project-grid" id="project-grid">
+                    <article class="project reveal" data-cat="app">
+                        <div class="p-media"><img src="img/e%20commerce.jpg" alt="E-commerce project screenshot" loading="lazy"></div>
+                        <div class="p-body">
+                            <h3>E-Commerce Store</h3>
+                            <p>A shopping storefront with product listings, cart and a responsive checkout flow.</p>
+                            <div class="p-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            <div class="p-links">
+                                <a href="https://bharathi-e-commerce.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                <a href="https://github.com/Bharathi7688/E-COMMERCE" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" data-cat="app">
+                        <div class="p-media"><img src="img/redbus.webp" alt="RedBus clone screenshot" loading="lazy"></div>
+                        <div class="p-body">
+                            <h3>RedBus Clone</h3>
+                            <p>A recreation of the RedBus booking interface with search and route listing screens.</p>
+                            <div class="p-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            <div class="p-links">
+                                <a href="https://red-bus-clone-umber.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                <a href="https://github.com/Bharathi7688/RedBus-Clone" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" data-cat="api">
+                        <div class="p-media"><img src="img/weather.jpg" alt="Weather app screenshot" loading="lazy"></div>
+                        <div class="p-body">
+                            <h3>Weather App</h3>
+                            <p>Real-time weather lookup by city, powered by a public weather API.</p>
+                            <div class="p-tags"><span>JavaScript</span><span>REST API</span></div>
+                            <div class="p-links">
+                                <a href="https://weather-app-inky-eight-89.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                <a href="https://github.com/Bharathi7688/Weather-App" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" data-cat="app">
+                        <div class="p-media"><img src="img/music.jpg" alt="Music player screenshot" loading="lazy"></div>
+                        <div class="p-body">
+                            <h3>Music Player</h3>
+                            <p>A sleek audio player with playlist, play/pause, seek and track navigation.</p>
+                            <div class="p-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            <div class="p-links">
+                                <a href="https://music-player-delta-nine.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                <a href="https://github.com/Bharathi7688/Music-Player" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" data-cat="api">
+                        <div class="p-media"><img src="img/gif.jpg" alt="GIF generator screenshot" loading="lazy"></div>
+                        <div class="p-body">
+                            <h3>GIF Generator</h3>
+                            <p>Search and discover GIFs instantly through a third-party GIF API.</p>
+                            <div class="p-tags"><span>JavaScript</span><span>REST API</span></div>
+                            <div class="p-links">
+                                <a href="https://gif-generator-theta.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                <a href="https://github.com/Bharathi7688/GIF-GENERATOR" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" data-cat="api">
+                        <div class="p-media"><img src="img/joker.jpg" alt="Jokes API project screenshot" loading="lazy"></div>
+                        <div class="p-body">
+                            <h3>Jokes API</h3>
+                            <p>Fetches a fresh random joke on demand — a fun exercise in async JavaScript.</p>
+                            <div class="p-tags"><span>JavaScript</span><span>Fetch API</span></div>
+                            <div class="p-links">
+                                <a href="https://jokes-api-navy.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                <a href="https://github.com/Bharathi7688/JOKES-API" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" data-cat="ui">
+                        <div class="p-media"><img src="img/parallax.jpg" alt="Parallax website screenshot" loading="lazy"></div>
+                        <div class="p-body">
+                            <h3>Parallax Website</h3>
+                            <p>A layered, scroll-driven parallax landing page with depth and motion.</p>
+                            <div class="p-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            <div class="p-links">
+                                <a href="https://parallax-three-omega.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                <a href="https://github.com/Bharathi7688/PARALLAX" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" data-cat="ui">
+                        <div class="p-media"><img src="img/login.jpg" alt="Double slider login page screenshot" loading="lazy"></div>
+                        <div class="p-body">
+                            <h3>Double-Slider Login</h3>
+                            <p>An animated sign-in / sign-up panel with a smooth sliding transition.</p>
+                            <div class="p-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            <div class="p-links">
+                                <a href="https://double-slider-login-page.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                <a href="https://github.com/Bharathi7688/Double-Slider-Login-page" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" data-cat="ui">
+                        <div class="p-media"><img src="img/tic%20tak%20toe.jpg" alt="Tic Tac Toe game screenshot" loading="lazy"></div>
+                        <div class="p-body">
+                            <h3>Tic Tac Toe</h3>
+                            <p>The classic two-player game with win detection and quick restart.</p>
+                            <div class="p-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            <div class="p-links">
+                                <a href="https://tic-tac-toe-gamma-lake.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                <a href="https://github.com/Bharathi7688/TIC-TAC-TOE" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" data-cat="ui">
+                        <div class="p-media"><img src="img/password.jpg" alt="Password generator screenshot" loading="lazy"></div>
+                        <div class="p-body">
+                            <h3>Password Generator</h3>
+                            <p>Generates strong, configurable passwords with one-click copy.</p>
+                            <div class="p-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            <div class="p-links">
+                                <a href="https://password-generator-omega-eight.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                <a href="https://github.com/Bharathi7688/PASSWORD-GENERATOR" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" data-cat="ui">
+                        <div class="p-media"><img src="img/drawing.jpg" alt="Drawing box screenshot" loading="lazy"></div>
+                        <div class="p-body">
+                            <h3>Drawing Box</h3>
+                            <p>A browser canvas sketchpad with brush size and color controls.</p>
+                            <div class="p-tags"><span>Canvas</span><span>JavaScript</span></div>
+                            <div class="p-links">
+                                <a href="https://drawing-box.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                <a href="https://github.com/Bharathi7688/Drawing-Box" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project reveal" data-cat="ui">
+                        <div class="p-media"><img src="img/color.jpg" alt="Color flipper screenshot" loading="lazy"></div>
+                        <div class="p-body">
+                            <h3>Color Flipper</h3>
+                            <p>Instantly flips the background to random colors and shows the hex code.</p>
+                            <div class="p-tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                            <div class="p-links">
+                                <a href="https://color-flipper-lemon-nine.vercel.app/" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square"></i> Live</a>
+                                <a href="https://github.com/Bharathi7688/COLOR-FLIPPER" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="more-work reveal">
+                    <a href="https://github.com/Bharathi7688?tab=repositories" target="_blank" rel="noopener" class="btn btn-ghost">
+                        <i class="fa-brands fa-github"></i> See more on GitHub
                     </a>
                 </div>
-            </footer>
+            </div>
+        </section>
+
+        <!-- ============ CONTACT ============ -->
+        <section class="section" id="contact">
+            <div class="wrap">
+                <div class="section-head reveal">
+                    <span class="eyebrow">05 — Contact</span>
+                    <h2>Let's build something <span class="gradient-text">great</span></h2>
+                    <p class="section-sub">Have a project, a role, or just want to talk tech? My inbox is always open.</p>
+                </div>
+
+                <div class="contact-grid">
+                    <div class="contact-info reveal">
+                        <a class="info-card" href="mailto:bharathiraj7688@gmail.com">
+                            <span class="info-icon"><i class="fa-solid fa-envelope"></i></span>
+                            <span><small>Email</small><strong>bharathiraj7688@gmail.com</strong></span>
+                        </a>
+                        <a class="info-card" href="tel:+919047900884">
+                            <span class="info-icon"><i class="fa-solid fa-phone"></i></span>
+                            <span><small>Phone</small><strong>+91 90479 00884</strong></span>
+                        </a>
+                        <a class="info-card" href="https://www.linkedin.com/in/bharathidasan7688/" target="_blank" rel="noopener">
+                            <span class="info-icon"><i class="fa-brands fa-linkedin-in"></i></span>
+                            <span><small>LinkedIn</small><strong>in/bharathidasan7688</strong></span>
+                        </a>
+                        <div class="info-card">
+                            <span class="info-icon"><i class="fa-solid fa-location-dot"></i></span>
+                            <span><small>Location</small><strong>Chennai, Tamil Nadu, India</strong></span>
+                        </div>
+                    </div>
+
+                    <form class="contact-form reveal" id="contact-form" action="https://formspree.io/f/your-form-id" method="POST" novalidate>
+                        <div class="field-row">
+                            <div class="field">
+                                <input type="text" id="f-name" name="name" required placeholder=" " autocomplete="name">
+                                <label for="f-name">Your name</label>
+                            </div>
+                            <div class="field">
+                                <input type="email" id="f-email" name="email" required placeholder=" " autocomplete="email">
+                                <label for="f-email">Email address</label>
+                            </div>
+                        </div>
+                        <div class="field">
+                            <input type="text" id="f-subject" name="subject" required placeholder=" ">
+                            <label for="f-subject">Subject</label>
+                        </div>
+                        <div class="field">
+                            <textarea id="f-message" name="message" rows="5" required placeholder=" "></textarea>
+                            <label for="f-message">Your message</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span class="btn-label">Send message</span> <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                        <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
         </section>
     </main>
 
-    <div class="controls">
-        <button class="control active-btn" data-id="home" aria-label="Go to Home Section" data-tooltip="Home">
-            <i class="fas fa-home"></i>
-            
-        </button>
-        <button class="control" data-id="about" aria-label="Go to About Section" data-tooltip="About">
-            <i class="fas fa-user"></i>
-            
-        </button>
-        <button class="control" data-id="portfolio" aria-label="Go to Portfolio Section" data-tooltip="My Work">
-            <i class="fas fa-briefcase"></i>
-          
-        </button>
-        <button class="control" data-id="contact" aria-label="Go to Contact Section" data-tooltip="Contact">
-            <i class="fas fa-envelope-open"></i>
-           
-        </button>
-    </div>
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+        <div class="wrap footer-inner">
+            <a href="#home" class="logo">
+                <span class="logo-mark">B</span><span class="logo-text">harathidasan<span class="dot">.</span></span>
+            </a>
+            <p>© <span id="year"></span> Bharathidasan R. Designed &amp; built with care.</p>
+            <div class="footer-socials">
+                <a href="https://www.linkedin.com/in/bharathidasan7688/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/Bharathi7688" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/bharathi_.r._" target="_blank" rel="noopener" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.facebook.com/bharathithasan.thasan.54" target="_blank" rel="noopener" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            </div>
+        </div>
+    </footer>
 
-    <div class="theme-btn" aria-label="Toggle Theme" data-tooltip="Light/Dark">
-        <i class="fas fa-sun active-icon"></i>
-        <i class="fas fa-moon"></i>
-      
-    </div>
-
-    <button id="back-to-top" aria-label="Back to Top">↑</button>
+    <button class="to-top" id="to-top" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
     <script src="script.js"></script>
 </body>
